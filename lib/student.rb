@@ -41,7 +41,7 @@ class Student
   end
 
   def self.find_by_name(name)
-
+    DB[:conn].execute("SELECT * FROM students WHERE name = ?", name)
   end
 
   # Remember, you can access your database connection anywhere in this class
